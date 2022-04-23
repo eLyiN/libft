@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 16:32:31 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/23 19:32:22 by aarribas         ###   ########.fr       */
+/*   Created: 2022/04/23 18:46:00 by aarribas          #+#    #+#             */
+/*   Updated: 2022/04/23 19:43:28 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* La funcion de bzero escribe cero bites (aka '\0') en el string de s. Si el 
- * string no contiene longitud o el valor de n es igual a 0,
- * la funcion no debería de realizar nada.*/
-
-void	ft_bzero(void *s, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	if (n != 0)
+	if (c == '\0' || *s == '\0')
+		return ((char *)s);
+	while (*s)
 	{
-		ft_memset(s, '\0', n);
+		if (*s == c)
+			return ((char *)s);
+		else
+		{
+			s++;
+		}
 	}
+	return (NULL);
+}
+#include <stdio.h>
+int	main(void)
+{
+	char *test = "Hola que dice";
+	int a = 'f';
+
+	printf("%s\n", ft_strchr(test, a));
 }

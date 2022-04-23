@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 16:32:31 by aarribas          #+#    #+#             */
+/*   Created: 2022/04/23 16:47:24 by aarribas          #+#    #+#             */
 /*   Updated: 2022/04/23 19:32:22 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* La funcion de bzero escribe cero bites (aka '\0') en el string de s. Si el 
- * string no contiene longitud o el valor de n es igual a 0,
- * la funcion no debería de realizar nada.*/
-
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlen(const char *str)
 {
-	if (n != 0)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		ft_memset(s, '\0', n);
+		i++;
 	}
+	return (i);
 }

@@ -1,9 +1,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
+# include <stddef.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include <stddef.h>
+# include <unistd.h>
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -23,8 +24,9 @@ size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *haystack,
-								const char *needle, size_t len);
+char	*ft_strnstr(const char *haystack,
+					const char *needle,
+					size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				ft_addnfix(char **str, char fix_char, int len, int side);
@@ -43,9 +45,9 @@ char				*ft_strnew(size_t size);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char *));
-void				ft_striteri(char *s, void(*f)(unsigned in, char *));
-char				*ft_strmap(const char *s, char(*f)(char));
-char				*ft_strmapi(const char *s, char(*f)(unsigned int, char));
+void				ft_striteri(char *s, void (*f)(unsigned in, char *));
+char				*ft_strmap(const char *s, char (*f)(char));
+char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int					ft_strequ(const char *s1, const char *s2);
 int					ft_strnequ(const char *s1, const char *s2, size_t n);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
@@ -63,7 +65,7 @@ void				ft_putstr_fd(const char *s, int fd);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
-typedef	struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;

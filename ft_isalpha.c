@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarribas <aarribas@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:35:13 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/23 16:35:24 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/23 19:32:22 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,3 @@ int ft_isalpha (int c)
     else
         return (0);
 }
-/*
-int main()
-{
-    int a;
-
-    a = 's';
-
-    printf("%d", ft_isalpha(a));
-}*/
