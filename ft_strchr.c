@@ -27,11 +27,11 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-#include <stdio.h>
+/*#include <stdio.h>
 int	main(void)
 {
 	char *test = "Hola que dice";
 	int a = 'f';
 
 	printf("%s\n", ft_strchr(test, a));
-}
+}*/
