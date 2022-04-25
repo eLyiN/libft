@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 17:52:25 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/23 17:53:10 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:11:42 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	str = (unsigned char *)s;
 	while (i < n)
 	{
-		str[i] = (unsigned char)s;
+		str[i] = (unsigned char)c;
 		i++;
 	}
 	return (s);

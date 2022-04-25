@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:50:32 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/24 23:30:48 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:14:25 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ int ft_atoi(const char *str)
     }
     return(signo * nbr);
 }
-
+/*
 int main(void)
 {
 	char *s = "++--+-+--+-1254512";
 	printf("%d %d", ft_atoi(s), atoi(s));
 	return (0);
-}
+}*/

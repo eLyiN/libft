@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 16:47:24 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 16:14:57 by aarribas         ###   ########.fr       */
+/*   Created: 2022/04/25 11:47:17 by aarribas          #+#    #+#             */
+/*   Updated: 2022/04/25 16:12:29 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char    *ft_strdup(const char *s)
 {
-	int	i;
+    char *str;
 
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
+    if(!(str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+    {
+        return (NULL);
+    }
+
+    ft_strlcpy(str, s, (ft_strlen(s) + 1));
+    return (str);
 }
 /*
-int	main(void)
+int main()
 {
-	int	i;
+    const char str1[] = "TASKL";
+    char *str2 = ft_strdup(str1);
 
-	i = ft_strlen("asdasdasdasd");
-	return (0);
+    printf("%p\n", str1);
+    printf("%p\n", str2);
+    printf("%s", ft_strdup(str1));
+    printf("%s", strdup(str1));
+
 }*/

@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:44:47 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/23 17:59:11 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:15:56 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (j);
 }
-
 /*
 #include <stdio.h>
 int	main(void)
