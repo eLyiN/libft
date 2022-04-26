@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:50:32 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 16:14:25 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/26 15:52:25 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int ft_atoi(const char *str)
     signo = 1;
     nbr = 0;
 
-    while(str1[i] == ' ' && str1[i] == '\f' && str1[i] == '\n' && str1[i] == '\r' 
-    && str1[i] == '\t' && str1[i] == '\v')
+    while(str1[i] == ' ' || str1[i] == '\f' || str1[i] == '\n' ||
+    str1[i] == '\r' || str1[i] == '\t' || str1[i] == '\v')
     {
         i++;
     }
-    while(str1[i] == '+' && str1[i] == '-')
+    while(str1[i] == '+' || str1[i] == '-')
     {
         if(str1[i] == '-')
         {
@@ -44,10 +44,3 @@ int ft_atoi(const char *str)
     }
     return(signo * nbr);
 }
-/*
-int main(void)
-{
-	char *s = "++--+-+--+-1254512";
-	printf("%d %d", ft_atoi(s), atoi(s));
-	return (0);
-}*/

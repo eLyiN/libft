@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarribas <aarribas@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:44:16 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/23 16:44:29 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/26 00:33:21 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,33 @@
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t count_0;
-    size_t count_1;
+    size_t dst_len;
+    size_t src_len;
     size_t i;
+    size_t j;
 
-
+    dst_len = ft_strlen(dst);
+    src_len = ft_strlen(src);
     i = 0;
-    count_0 = 0;
-    count_1 = 0;
-    while(dst[count_0])
+    j = dst_len;
+    
+    if (size == 0)
     {
-        count_0++;
+        return (src_len);
     }
-    while(src[count_1])
-        count_1++;
-    if (size < count_1)
+    while((dst_len + i) < (size - 1) && src[i])
     {
-        return (count_1 + size);
+        dst[j + i] = (char)src[i];
+        i++;
+    }
+    dst[j + i] = '\0';
+    if(size > dst_len)
+    {
+        return(dst_len + src_len);
     }
     else
     {
-        while (src[i])
-        {
-            dst[count_0] = src[i];
-            count_0++;
-            i++;
-        }
-    dst[count_0] = '\0';
-    return(count_0);
+        return(src_len + size);
     }
+    return (size + src_len);
 }
-/*
-#include <stdio.h>
-#include <bsd/string.h>
-#include <stddef.h>
-
-int main()
-{
-    char origen[] = "Me llamo Earl";
-    char desti[] = "Hola";
-
-    printf("Este es el return value: %ld\n", strlcat(desti, origen, 20));
-    printf("Asi queda el origen: %s\n", origen);
-    printf("Asi queda el destino: %s\n", desti);
-    printf("Este es el return value: %ld\n", ft_strlcat(desti, origen, 20));
-    printf("Asi queda el origen: %s\n", origen);
-    printf("Asi queda el destino: %s\n", desti);
-}*/

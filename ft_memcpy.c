@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarribas <aarribas@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 19:11:12 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/21 20:22:11 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/25 22:07:04 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
 	dest_temp = (unsigned char *)dest;
 	src_temp = (unsigned char *)src;
 
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	while (i < n)
 	{
 		dest_temp[i] = src_temp[i];
@@ -29,3 +31,8 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*
+int main()
+{
+	printf("%p", ft_memcpy(((void*)0), ((void*)0), 3));
+}*/

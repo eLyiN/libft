@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarribas <aarribas@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:45:12 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/23 16:45:21 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/26 09:02:26 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

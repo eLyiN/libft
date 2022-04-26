@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 15:35:44 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/24 16:27:17 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/25 20:15:33 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,11 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     if(n == 0)
     return(0);
 
-    while(str1[i] && str2[i] && i < n)
+    while(i < n)
     {
         if(str1[i] != str2[i])
         {
-            if(((int)(str1[i]) - (int)(str2[i])) > 0)
-            {
-                return(1);
-            }
-            else
-            {
-                return(-1);
-            }
+            return(str1[i] - str2[i]);
         }
         i++;
     }

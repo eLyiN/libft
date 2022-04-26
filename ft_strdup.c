@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:47:17 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 16:12:29 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/26 10:47:19 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,19 @@
 char    *ft_strdup(const char *s)
 {
     char *str;
+    int i;
 
+    i = 0;
     if(!(str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
     {
         return (NULL);
     }
-
-    ft_strlcpy(str, s, (ft_strlen(s) + 1));
+		while (s[i])
+		{
+			str[i] = (char)s[i];
+            i++;
+		}
+	str[i] = '\0';
     return (str);
 }
 /*

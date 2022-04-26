@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 20:22:47 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 16:01:50 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/04/25 19:43:32 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,36 @@
 
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
-	int i;
+	unsigned char		*new_dest;
+	unsigned char		*new_src;
 
-	i = (int)n - 1;
-	if (dest > src)
+	if (dest == src || n == 0)
+		return (dest);
+	if (dest < src)
 	{
-		while (i--)
-		{
-			((unsigned char *)dest)[i] = ((unsigned char*)src)[i];
-		}
+		new_dest = (unsigned char *)dest;
+		new_src = (unsigned char *)src;
+		while (n--)
+			*new_dest++ = *new_src++;
 	}
 	else
 	{
-		ft_memcpy(dest, src, n);
+		new_dest = (unsigned char *)dest + (n - 1);
+		new_src = (unsigned char *)src + (n - 1);
+		while (n--)
+			*new_dest-- = *new_src--;
 	}
 	return (dest);
 }
+/*
+int main()
+{
+   char dest[] = "oldstring";
+   const char src[]  = "newstring";
+
+   printf("Before memmove dest = %s, src = %s\n", dest, src);
+   ft_memmove(dest, src, 9);
+   printf("After memmove dest = %s, src = %s\n", dest, src);
+
+   return(0);
+}*/
