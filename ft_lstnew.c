@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 13:47:41 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/28 22:36:03 by aarribas         ###   ########.fr       */
+/*   Created: 2022/05/01 15:43:04 by aarribas          #+#    #+#             */
+/*   Updated: 2022/05/01 16:18:20 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(const char *s, unsigned int start, size_t len)
+t_list  *ft_lstnew(void *content)
 {
-    char *str;
-    size_t i;
-    size_t j;
+    t_list *node;
 
-    if(s)
-    {
-    if(!(str = (char *)malloc(sizeof(char) * (len + 1))))
+    if(!(node = malloc(sizeof(t_list))))
     {
         return (NULL);
     }
-    i = (size_t)start;
-    j = 0;
-    while(i < ft_strlen(s) && j < len)
+    if(!content)
     {
-        str[j++] = s[i++];
+        node->content = NULL;
     }
-    str[j] = '\0';
-    return (str);
-    }
-    return (NULL);
+    node->content = content;
+    node->next = NULL;
+    return (node);
 }

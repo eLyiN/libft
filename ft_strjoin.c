@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 13:47:41 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/28 22:36:03 by aarribas         ###   ########.fr       */
+/*   Created: 2022/04/26 15:55:54 by aarribas          #+#    #+#             */
+/*   Updated: 2022/04/28 22:34:30 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(const char *s, unsigned int start, size_t len)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
-    char *str;
+    char *new_str;
     size_t i;
     size_t j;
 
-    if(s)
+    if(s1 && s2)
     {
-    if(!(str = (char *)malloc(sizeof(char) * (len + 1))))
+    if(!(new_str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + (ft_strlen(s2) + 1)))))
+    return (NULL);
+    i = 0;
+    while(s1[i] != '\0')
     {
-        return (NULL);
+        new_str[i] = s1[i];
+        i++;
     }
-    i = (size_t)start;
     j = 0;
-    while(i < ft_strlen(s) && j < len)
+    while(s2[j] != '\0')
     {
-        str[j++] = s[i++];
+        new_str[i] = s2[j];
+        i++;
+        j++;
     }
-    str[j] = '\0';
-    return (str);
+    new_str[i] = '\0';
+    return (new_str);
     }
     return (NULL);
 }

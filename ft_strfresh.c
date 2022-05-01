@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strfresh.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 13:47:41 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/28 22:36:03 by aarribas         ###   ########.fr       */
+/*   Created: 2022/04/28 22:12:48 by aarribas          #+#    #+#             */
+/*   Updated: 2022/04/28 22:17:38 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(const char *s, unsigned int start, size_t len)
+char    *ft_strfresh(const char *str)
 {
-    char *str;
-    size_t i;
-    size_t j;
+    char *fresh;
 
-    if(s)
+    if(str)
     {
-    if(!(str = (char *)malloc(sizeof(char) * (len + 1))))
-    {
-        return (NULL);
-    }
-    i = (size_t)start;
-    j = 0;
-    while(i < ft_strlen(s) && j < len)
-    {
-        str[j++] = s[i++];
-    }
-    str[j] = '\0';
-    return (str);
+        if(!(fresh = (char *)malloc(sizeof(*str) * (ft_strlen(str) + 1))))
+        {
+            return (NULL);
+        }
+        ft_memset(fresh, '\0', (ft_strlen(str) + 1));
+        return (fresh);
     }
     return (NULL);
 }
