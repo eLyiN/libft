@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:44:47 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 16:15:56 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:32:20 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (j);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-    char destino[] = "s";
-    char source[] = "";
-
-    printf("Esto es mi funcion: %ld\n", ft_strlcpy(destino, source, 9));
-    printf("Esto es mi funcion el dest: %s\n", destino);
-
-    printf("Esta es la original: %ld\n", strlcpy(destino, source, 9));
-    printf("Esta es la original y el dest: %s\n", destino);
- 
-}*/

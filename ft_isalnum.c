@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:33:38 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 20:26:28 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:28:59 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,3 @@ int	ft_isalnum(int c)
 	}
 	return (0);
 }
-

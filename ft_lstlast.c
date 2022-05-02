@@ -6,22 +6,22 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 16:55:10 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/01 17:17:24 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:30:31 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    t_list *temp;
+	t_list	*temp;
 
-    temp = lst;
-    if (temp == NULL)
-    return (temp);
-    while (temp->next != NULL)
-    {
-        temp = temp->next;
-    }
-    return(temp);
+	temp = lst;
+	if (temp == NULL)
+		return (temp);
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	return (temp);
 }

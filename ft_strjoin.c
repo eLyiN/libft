@@ -6,37 +6,38 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:55:54 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/28 22:34:30 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:32:09 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char *new_str;
-    size_t i;
-    size_t j;
+	char	*new_str;
+	size_t	i;
+	size_t	j;
 
-    if(s1 && s2)
-    {
-    if(!(new_str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + (ft_strlen(s2) + 1)))))
-    return (NULL);
-    i = 0;
-    while(s1[i] != '\0')
-    {
-        new_str[i] = s1[i];
-        i++;
-    }
-    j = 0;
-    while(s2[j] != '\0')
-    {
-        new_str[i] = s2[j];
-        i++;
-        j++;
-    }
-    new_str[i] = '\0';
-    return (new_str);
-    }
-    return (NULL);
+	if (s1 && s2)
+	{
+		if (!(new_str = (char *)malloc(sizeof(char) * (ft_strlen(s1)
+						+ (ft_strlen(s2) + 1)))))
+			return (NULL);
+		i = 0;
+		while (s1[i] != '\0')
+		{
+			new_str[i] = s1[i];
+			i++;
+		}
+		j = 0;
+		while (s2[j] != '\0')
+		{
+			new_str[i] = s2[j];
+			i++;
+			j++;
+		}
+		new_str[i] = '\0';
+		return (new_str);
+	}
+	return (NULL);
 }

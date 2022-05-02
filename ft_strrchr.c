@@ -6,42 +6,33 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 00:31:00 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 21:42:09 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:34:07 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-    char *point;
-    int count;
+	char	*point;
+	int		count;
 
-    point = (char *)str;
-    count = 0;
-
-    if (*point != '\0')
-    {
-        while(point[count])
-        {
-            count++;
-        }
-        while(count >= 0)
-        {
-            if(point[count] == (char)c)
-            {
-                return(point + count);
-            }
-        count--;
-        }
-    }
-    return(NULL);
+	point = (char *)str;
+	count = 0;
+	if (*point != '\0')
+	{
+		while (point[count])
+		{
+			count++;
+		}
+		while (count >= 0)
+		{
+			if (point[count] == (char)c)
+			{
+				return (point + count);
+			}
+			count--;
+		}
+	}
+	return (NULL);
 }
-/*
-int main()
-{
-    const char test[] = "Esto es una prueba";
-    int a = 'p';
-
-    printf("%s\n", ft_strrchr(test, a));
-}*/

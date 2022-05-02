@@ -6,20 +6,20 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:07:34 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/30 20:59:13 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:31:38 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    if (s)
-    {
-        while(*s)
-        {
-            ft_putchar_fd(*s, fd);
-            s++;
-        }
-    }
+	if (s)
+	{
+		while (*s)
+		{
+			ft_putchar_fd(*s, fd);
+			s++;
+		}
+	}
 }

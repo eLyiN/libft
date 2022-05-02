@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 16:47:24 by aarribas          #+#    #+#             */
-/*   Updated: 2022/04/25 16:14:57 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/02 19:32:26 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,3 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
-/*
-int	main(void)
-{
-	int	i;
-
-	i = ft_strlen("asdasdasdasd");
-	return (0);
-}*/
