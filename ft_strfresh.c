@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 22:12:48 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:32:00 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/04 07:39:33 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ char	*ft_strfresh(const char *str)
 
 	if (str)
 	{
-		if (!(fresh = (char *)malloc(sizeof(*str) * (ft_strlen(str) + 1))))
-		{
+		fresh = (char *)malloc(sizeof(*str) * (ft_strlen(str) + 1));
+		if (!fresh)
 			return (NULL);
-		}
 		ft_memset(fresh, '\0', (ft_strlen(str) + 1));
 		return (fresh);
 	}

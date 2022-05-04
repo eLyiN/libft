@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 09:11:11 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:47:53 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:47:40 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,35 +41,43 @@ int	ft_nbrcount(int c)
 		return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_zerominint(int n, char *str)
 {
-	char	*fresh_str;
-	int		i;
-	int		x;
 	char	*min_int;
+	int		x;
 
-	i = ft_nbrcount(n);
-	fresh_str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!fresh_str)
-		return (NULL);
 	if (n == -2147483648)
 	{
 		min_int = "-2147483648";
 		x = 0;
 		while (x <= 12)
 		{
-			fresh_str[x] = min_int[x];
+			str[x] = min_int[x];
 			x++;
 		}
-		return (fresh_str);
+		return (str);
 	}
-	fresh_str[i--] = '\0';
-	if (n == 0)
+	else if (n == 0)
 	{
-		fresh_str[0] = '0';
-		fresh_str[1] = '\0';
-		return (fresh_str);
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
 	}
+	return (str);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*fresh_str;
+	int		i;
+
+	i = ft_nbrcount(n);
+	fresh_str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!fresh_str)
+		return (NULL);
+	if (n == -2147483648 || n == 0)
+		ft_zerominint(n, fresh_str);
+	fresh_str[i--] = '\0';
 	if (n < 0)
 	{
 		fresh_str[0] = '-';

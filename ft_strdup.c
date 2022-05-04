@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:47:17 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:31:52 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/04 07:37:07 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ char	*ft_strdup(const char *s)
 	int		i;
 
 	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-	{
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str || !s)
 		return (NULL);
-	}
 	while (s[i])
 	{
 		str[i] = (char)s[i];

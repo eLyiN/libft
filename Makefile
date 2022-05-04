@@ -6,7 +6,7 @@
 #    By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 15:33:13 by aarribas          #+#    #+#              #
-#    Updated: 2022/05/01 21:43:23 by aarribas         ###   ########.fr        #
+#    Updated: 2022/05/04 07:47:43 by aarribas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS_BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_b
 				ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror
 OBJS			= $(SRCS:.c=.o)
 BONUS_OBJS		= $(SRCS_BONUS:.c=.o)
 NAME			= libft.a

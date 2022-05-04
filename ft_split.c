@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:06:13 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:27:59 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/03 23:05:43 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,47 +41,45 @@ static int	ft_countsubstr(const char *str, char c)
 	return (substr);
 }
 
+static char	*word_dup(const char *str, int start, int finish)
+{
+	char	*word;
+	int		i;
+
+	i = 0;
+	word = malloc((finish - start + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr_sub;
-	char	*new_str;
-	int		substr;
-	int		i;
-	int		j;
-	int		k;
-	int		len;
+	size_t	i;
+	size_t	j;
+	int		index;
 
-	if (s)
+	arr_sub = malloc((ft_countsubstr(s, c) + 1) * sizeof(char *));
+	if (!s || !(arr_sub))
+		return (NULL);
+	i = 0;
+	j = 0;
+	index = -1;
+	while (i <= ft_strlen(s))
 	{
-		substr = ft_countsubstr(s, c);
-		if (!(arr_sub = (char **)malloc(sizeof(char *) * (substr + 1))))
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			return (NULL);
+			arr_sub[j++] = word_dup(s, index, i);
+			index = -1;
 		}
-		i = 0;
-		j = 0;
-		if ((new_str = ft_strdup(s)))
-		{
-			while (new_str[i])
-			{
-				if (new_str[i] != c)
-				{
-					len = 0;
-					k = i;
-					while (new_str[i] != c && new_str[i] != '\0')
-					{
-						len++;
-						i++;
-					}
-					arr_sub[j] = ft_substr(new_str, (unsigned int)k, len);
-					j++;
-				}
-				else
-					i++;
-			}
-		}
-		arr_sub[j] = NULL;
-		return (arr_sub);
+		i++;
 	}
-	return (NULL);
+	arr_sub[j] = 0;
+	return (arr_sub);
 }
