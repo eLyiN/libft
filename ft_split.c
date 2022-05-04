@@ -41,7 +41,7 @@ static int	ft_countsubstr(const char *str, char c)
 	return (substr);
 }
 
-static char	*word_dup(const char *str, int start, int finish)
+static char	*ft_wordcrt(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			arr_sub[j++] = word_dup(s, index, i);
+			arr_sub[j++] = ft_wordcrt(s, index, i);
 			index = -1;
 		}
 		i++;
