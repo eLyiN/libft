@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:06:13 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/03 23:05:43 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/08 14:04:08 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ static int	ft_countsubstr(const char *str, char c)
 	return (substr);
 }
 
-static char	*ft_wordcrt(const char *str, int start, int finish)
+static char	*ft_wordcreate(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
 
 	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
+	word = malloc(sizeof(char) * (finish - start + 1));
 	if (!word)
 		return (NULL);
 	while (start < finish)
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			arr_sub[j++] = ft_wordcrt(s, index, i);
+			arr_sub[j++] = ft_wordcreate(s, index, i);
 			index = -1;
 		}
 		i++;

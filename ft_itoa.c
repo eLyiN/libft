@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 09:11:11 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/03 16:47:40 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/14 10:20:46 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*ft_zerominint(int n, char *str)
 			str[x] = min_int[x];
 			x++;
 		}
+		str[x] = '\0';
 		return (str);
 	}
 	else if (n == 0)
@@ -76,7 +77,10 @@ char	*ft_itoa(int n)
 	if (!fresh_str)
 		return (NULL);
 	if (n == -2147483648 || n == 0)
+	{
 		ft_zerominint(n, fresh_str);
+		return (fresh_str);
+	}
 	fresh_str[i--] = '\0';
 	if (n < 0)
 	{

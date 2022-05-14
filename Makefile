@@ -6,7 +6,7 @@
 #    By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 15:33:13 by aarribas          #+#    #+#              #
-#    Updated: 2022/05/04 07:47:43 by aarribas         ###   ########.fr        #
+#    Updated: 2022/05/08 14:00:27 by aarribas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ BONUS_OBJS		= $(SRCS_BONUS:.c=.o)
 NAME			= libft.a
 CC				= gcc
 
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
-#	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
 
 all:			$(NAME)
 
