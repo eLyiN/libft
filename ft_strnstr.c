@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 16:27:52 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:33:55 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/14 14:28:23 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,25 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	char	*big_r;
-	char	*little_r;
+	size_t	j;
 
-	big_r = (char *)big;
-	little_r = (char *)little;
 	i = 0;
-	if (little_r[0] == '\0')
+	if (little[0] == '\0')
 	{
-		return (big_r);
+		return ((char *)big);
 	}
-	while (*big_r && i < len)
+	while (big[i])
 	{
-		if (*big_r == *little_r)
+		j = 0;
+		while (big[i + j] == little[j] && (i + j) < len)
 		{
-			if (ft_strncmp(big_r, little_r, ft_strlen(little_r)) == 0)
-				return (big_r);
-			else
-				return (NULL);
+			if (big[i + j] == '\0' && little[j] == '\0')
+				return ((char *)&big[i]);
+			j++;
 		}
+		if (little[j] == '\0')
+			return ((char *)big + i);
 		i++;
-		big_r++;
 	}
-	return (NULL);
+	return (0);
 }

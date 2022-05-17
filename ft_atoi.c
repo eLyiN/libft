@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 22:50:32 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:41:15 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/14 13:52:42 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int	ft_atoi(const char *str)
 {
-	char	*str1;
-	int		i;
-	int		signo;
-	int		nbr;
+	int	i;
+	int	signo;
+	int	nbr;
 
-	str1 = (char *)str;
 	i = 0;
 	signo = 1;
 	nbr = 0;
-	while (str1[i] == ' ' || str1[i] == '\f' || str1[i] == '\n'
-		|| str1[i] == '\r' || str1[i] == '\t' || str1[i] == '\v')
+	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n' || str[i] == '\r'
+		|| str[i] == '\t' || str[i] == '\v')
 		i++;
-	while (str1[i] == '+' || str1[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (str1[i] == '-')
+		if (str[i] == '-')
 			signo = -1;
 		i++;
 	}
+	if (str[i] == '+' || str[i] == '-')
+		return (0);
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		nbr = nbr * 10 + (str[i] - '0');
