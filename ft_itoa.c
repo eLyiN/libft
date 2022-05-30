@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 09:11:11 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/14 10:20:46 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/17 18:27:14 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,11 @@ char	*ft_zerominint(int n, char *str)
 	{
 		min_int = "-2147483648";
 		x = 0;
-		while (x <= 12)
+		while (x <= (int)ft_strlen(min_int))
 		{
 			str[x] = min_int[x];
 			x++;
 		}
-		str[x] = '\0';
 		return (str);
 	}
 	else if (n == 0)

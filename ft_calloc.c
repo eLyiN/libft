@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:48:54 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:28:38 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:37:14 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*ptr;
 
+	if (nitems == __SIZE_MAX__ && size > 1)
+		return (NULL);
+	if (size == __SIZE_MAX__ && nitems > 1)
+		return (NULL);
 	ptr = malloc(nitems * size);
 	if (ptr == NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: aarribas <aarribas@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 00:31:00 by aarribas          #+#    #+#             */
-/*   Updated: 2022/05/02 19:34:07 by aarribas         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:47:34 by aarribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *str, int c)
 
 	point = (char *)str;
 	count = 0;
+	if (c == '\0')
+		return (point + ft_strlen(str));
 	if (*point != '\0')
 	{
 		while (point[count])
